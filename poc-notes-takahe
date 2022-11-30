@@ -19,6 +19,10 @@ PKGs to install (as tested):
 -libxslt (PKG)
 -pip install psycopg2
 
+***Additional Notes***
+all pip commands were run as a "regular" user in the wheel group. Pip was installed
+via PKG as well as django.
+
 ***Code Added***
 settings.py - line 94:
 added host (jail) IP for PGHOST
