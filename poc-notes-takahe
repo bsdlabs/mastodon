@@ -20,8 +20,9 @@ PKGs to install (as tested):
 -pip install psycopg2
 
 ***Additional Notes***
-all pip commands were run as a "regular" user in the wheel group. Pip was installed
+-all pip commands were run as a "regular" user in the wheel group. Pip was installed
 via PKG as well as django.
+-all packages installed via PKG and pip were pulled from requirements.txt
 
 ***Code Added***
 settings.py - line 94:
@@ -70,3 +71,6 @@ Traceback (most recent call last):
     match (fan_out.type, fan_out.identity.local):
                                                  ^
 SyntaxError: invalid syntax
+
+Error could be the result of using Django 4.1.2/Python 3.9
+Reinstalling with Python 3.10
