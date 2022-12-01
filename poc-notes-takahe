@@ -79,8 +79,12 @@ Reinstalling with Python 3.10
 
 OS: FreeBSD 13.1-RELEASE in an ezjail
 *** Switching to ports because PKG does not show python 3.10
+***Please note that pip has to be run from a zip application in order
+to work with python310, from what I have found. PIP Zip Application Download link:
+https://bootstrap.pypa.io/pip/pip.pyz
 
-Ports installed:
--python310-3.10.8_1
-***py-pip installs for python3.9 and I do not see a pip for python310***
+Applications installed:
+-python310-3.10.8_1 - ports; default options
+-pip.pyz - from above link then "python310 -m pip.pyz ..."
+
 
