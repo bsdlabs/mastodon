@@ -74,3 +74,13 @@ SyntaxError: invalid syntax
 
 Error could be the result of using Django 4.1.2/Python 3.9
 Reinstalling with Python 3.10
+
+11-30-2022 5:08pm (UTC -7)
+
+OS: FreeBSD 13.1-RELEASE in an ezjail
+*** Switching to ports because PKG does not show python 3.10
+
+Ports installed:
+-python310-3.10.8_1
+***py-pip installs for python3.9 and I do not see a pip for python310***
+
