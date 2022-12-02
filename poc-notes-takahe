@@ -176,3 +176,7 @@ python3.10 ~/pip.pyz install Pillow
 The headers or library files could not be found for jpeg,
 a required dependency when compiling Pillow from source.
 
+12-1-222 - Starting over and using just ports...
+
+Ports installed:
+-
