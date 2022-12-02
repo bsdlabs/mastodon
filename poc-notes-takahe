@@ -176,7 +176,12 @@ python3.10 ~/pip.pyz install Pillow
 The headers or library files could not be found for jpeg,
 a required dependency when compiling Pillow from source.
 
-12-1-222 - Starting over and using just ports...
+12-1-222 - Starting over and using just ports... ;-;
 
 Ports installed:
--
+-python310 - default options
+-instantiated python3.10 venv - "python3.10 -m venv ~/.virtualenvs/takahe"
+***The following were executed in the python venv - To launch: ". ~/.virtualenv/takahe/bin/activate"
+-Django via pip.pyz - "python3.10 ~/pip.pyz install Django"
+-Postgresql14-server/client - default options
+
