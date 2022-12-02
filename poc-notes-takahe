@@ -162,4 +162,17 @@ ModuleNotFoundError: No module named 'cryptography'
 
 error: can't find Rust compiler
 
+sudo pkg install rust
+
+python3.10 ~/pip.pyz install cryptography
+Successfully installed cffi-1.15.1 cryptography-38.0.4 pycparser-2.21
+
+Tried running the application with the command:
+python3.10 manage.py runserver 192.168.254.108:8080
+
+ModuleNotFoundError: No module named 'PIL'
+
+python3.10 ~/pip.pyz install Pillow
+The headers or library files could not be found for jpeg,
+a required dependency when compiling Pillow from source.
 
