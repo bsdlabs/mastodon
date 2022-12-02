@@ -85,6 +85,81 @@ https://bootstrap.pypa.io/pip/pip.pyz
 
 Applications installed:
 -python310-3.10.8_1 - ports; default options
--pip.pyz - from above link then "python310 -m pip.pyz ..."
+-pip.pyz - from above link then "python3.10 -m pip.pyz ..."
+-pre-commit~=2.20.0 - from requirements-dev.txt; python3.10 ~/pip.pyz install pre-commit
+-black==22.10.0 - from requirements-dev.txt; python3.10 ~/pip.pyz install black
+-flake8==5.0.4 - from requirements-dev.txt; not available via pip or GitHub; available version is 6.0
+  -flake8-6.0.0 - installed in place of flake8-5.0.4
+-isort-5.10.1 - from requirements-dev.txt; python3.10 ~/pip.pyz install isort
+-mock~=4.0.3 - from requirements-dev.txt; python3.10 ~/pip.pyz install mock
+-pytest-asyncio~=0.20.2 - from requirements-dev.txt; python3.10 ~/pip.pyz install pytest-asyncio
+-pytest-django~=4.5.2 - from requirements-dev.txt; python3.10 ~/pip.pyz install pytest-django
+-pytest-httpx~=0.21 - from requirements-dev.txt; installed pytest-httpx 0.21.2; python3.10 ~/pip.pyz install pytest-httpx
+-Django - python -m pip install Django
+
+Tried running the application with the command:
+python3.10 manage.py runserver 192.168.254.108:8080
+
+Result was ModuleNotFoundError: No module named 'dj_database_url'
+
+python3.10 ~/pip.pyz install dj_database_url
+
+ModuleNotFoundError: No module named 'sentry_sdk'
+
+python3.10 ~/pip.pyz install sentry-sdk
+
+ModuleNotFoundError: No module named 'pydantic'
+
+python3.10 ~/pip.pyz install pydantic
+
+ImportError: email-validator is not installed, run `pip install pydantic[email]`
+
+python3.10 ~/pip.pyz install pydantic[email]
+
+ModuleNotFoundError: No module named 'django_htmx'
+
+python3.10 ~/pip.pyz install django-htmx
+
+ModuleNotFoundError: No module named 'pyld'
+
+python3.10 ~/pip.pyz install pyld
+	Error: Please make sure the libxml2 and libxslt development packages are installed.
+
+Installed libxml2 from ports; default options
+Installed libxslt from ports; default options
+
+python3.10 ~/pip.pyz install pyld
+
+No module named 'psycopg2'
+
+python3.10 ~/pip.pyz install psycopg2
+
+Error: pg_config executable not found.
+
+sudo pkg install postgresql14-client-14.5  postgresql14-server-14.5
+
+python3.10 ~/pip.pyz install psycopg2
+Success
+
+python3.10 ~/pip.pyz install pyld
+Success
+
+Tried running the application with the command:
+python3.10 manage.py runserver 192.168.254.108:8080
+
+ModuleNotFoundError: No module named 'urlman'
+
+python3.10 ~/pip.pyz install urlman
+
+Tried running the application with the command:
+python3.10 manage.py runserver 192.168.254.108:8080
+
+ModuleNotFoundError: No module named 'bleach'
+
+python3.10 ~/pip.pyz install bleach
+
+ModuleNotFoundError: No module named 'cryptography'
+
+error: can't find Rust compiler
 
 
