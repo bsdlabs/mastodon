@@ -183,7 +183,7 @@ Ports installed:
 -instantiated python3.10 venv - "python3.10 -m venv ~/.virtualenvs/takahe"
 ***The following were executed in the python venv - To launch: ". ~/.virtualenv/takahe/bin/activate"
 -Django via pip.pyz - "python3.10 ~/pip.pyz install Django"; Django 4.1.3 installed
--Postgresql14-server via ports - default options
+-Postgresql14-server (ports) - default options
 
 ***pip3.10 -r not working on install, installing pip requirements manually***
 
@@ -193,10 +193,12 @@ Ports installed:
 ***libxml2-2.10.3_1 already installed (ports)***
 ***libxslt-1.1.37 installed (ports)***
 
--pyld installed; pip3.10 install pyld~=2.0.3
+-pyld installed (very old version in ports); pip3.10 install pyld~=2.0.3
 -pillow~=9.3.0 - Error
 	The headers or library files could not be found for jpeg,
       a required dependency when compiling Pillow from source.
 
--py-pillow/py39-pillow (ports - v.9.2.0) -  
-
+-py-pillow/py39-pillow (ports - v.9.2.0)
+-urlman (old version in ports) - pip3.10 install urlman~=2.0.1
+-cryptography (old version in ports) - pip3.10 install cryptography~=38.0
+-httpx (ports; version 0.23.0)
