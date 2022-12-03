@@ -360,3 +360,84 @@ Traceback (most recent call last):
     conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
 django.db.utils.OperationalError: connection to server at "192.168.254.108", port 5432 failed: Connection refused
 	Is the server running on that host and accepting TCP/IP connections?
+
+postgres=# GRANT ALL ON DATABASE takahe TO john;
+GRANT
+postgres=# exit
+$ pg_ctl -D /var/db/postgres/data14/ restart
+waiting for server to shut down.... done
+server stopped
+waiting for server to start....2022-12-03 08:25:02.536 UTC [26023] LOG:  ending log output to stderr
+2022-12-03 08:25:02.536 UTC [26023] HINT:  Future log output will go to log destination "syslog".
+ done
+server started
+
+Tried to run with the command:
+python3.10 manage.py runserver 192.168.254.108:8080
+
+Traceback (most recent call last):
+  File "/home/john/.virtualenvs/takahe/lib/python3.10/site-packages/django/db/backends/base/base.py", line 282, in ensure_connection
+    self.connect()
+  File "/home/john/.virtualenvs/takahe/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/john/.virtualenvs/takahe/lib/python3.10/site-packages/django/db/backends/base/base.py", line 263, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/john/.virtualenvs/takahe/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/john/.virtualenvs/takahe/lib/python3.10/site-packages/django/db/backends/postgresql/base.py", line 215, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/home/john/.virtualenvs/takahe/lib/python3.10/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "192.168.254.108", port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/local/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/john/.virtualenvs/takahe/lib/python3.10/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/home/john/.virtualenvs/takahe/lib/python3.10/site-packages/django/core/management/commands/runserver.py", line 137, in inner_run
+    self.check_migrations()
+  File "/home/john/.virtualenvs/takahe/lib/python3.10/site-packages/django/core/management/base.py", line 564, in check_migrations
+    executor = MigrationExecutor(connections[DEFAULT_DB_ALIAS])
+  File "/home/john/.virtualenvs/takahe/lib/python3.10/site-packages/django/db/migrations/executor.py", line 18, in __init__
+    self.loader = MigrationLoader(self.connection)
+  File "/home/john/.virtualenvs/takahe/lib/python3.10/site-packages/django/db/migrations/loader.py", line 58, in __init__
+    self.build_graph()
+  File "/home/john/.virtualenvs/takahe/lib/python3.10/site-packages/django/db/migrations/loader.py", line 235, in build_graph
+    self.applied_migrations = recorder.applied_migrations()
+  File "/home/john/.virtualenvs/takahe/lib/python3.10/site-packages/django/db/migrations/recorder.py", line 81, in applied_migrations
+    if self.has_table():
+  File "/home/john/.virtualenvs/takahe/lib/python3.10/site-packages/django/db/migrations/recorder.py", line 57, in has_table
+    with self.connection.cursor() as cursor:
+  File "/home/john/.virtualenvs/takahe/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/john/.virtualenvs/takahe/lib/python3.10/site-packages/django/db/backends/base/base.py", line 323, in cursor
+    return self._cursor()
+  File "/home/john/.virtualenvs/takahe/lib/python3.10/site-packages/django/db/backends/base/base.py", line 299, in _cursor
+    self.ensure_connection()
+  File "/home/john/.virtualenvs/takahe/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/john/.virtualenvs/takahe/lib/python3.10/site-packages/django/db/backends/base/base.py", line 281, in ensure_connection
+    with self.wrap_database_errors:
+  File "/home/john/.virtualenvs/takahe/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/john/.virtualenvs/takahe/lib/python3.10/site-packages/django/db/backends/base/base.py", line 282, in ensure_connection
+    self.connect()
+  File "/home/john/.virtualenvs/takahe/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/john/.virtualenvs/takahe/lib/python3.10/site-packages/django/db/backends/base/base.py", line 263, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/john/.virtualenvs/takahe/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/john/.virtualenvs/takahe/lib/python3.10/site-packages/django/db/backends/postgresql/base.py", line 215, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/home/john/.virtualenvs/takahe/lib/python3.10/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: connection to server at "192.168.254.108", port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
