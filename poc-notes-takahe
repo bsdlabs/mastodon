@@ -441,3 +441,9 @@ Traceback (most recent call last):
     conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
 django.db.utils.OperationalError: connection to server at "192.168.254.108", port 5432 failed: Connection refused
 	Is the server running on that host and accepting TCP/IP connections?
+
+-Changed user 'john' password to '1234'
+
+Tried to run with the command:
+python3.10 manage.py runserver 192.168.254.108:8080
+	same errors as abovew
