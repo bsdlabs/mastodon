@@ -182,6 +182,21 @@ Ports installed:
 -python310 - default options
 -instantiated python3.10 venv - "python3.10 -m venv ~/.virtualenvs/takahe"
 ***The following were executed in the python venv - To launch: ". ~/.virtualenv/takahe/bin/activate"
--Django via pip.pyz - "python3.10 ~/pip.pyz install Django"
--Postgresql14-server - default options (port)
+-Django via pip.pyz - "python3.10 ~/pip.pyz install Django"; Django 4.1.3 installed
+-Postgresql14-server via ports - default options
+
+***pip3.10 -r not working on install, installing pip requirements manually***
+
+-pyld~=2.0.3 - Error
+	Error: Please make sure the libxml2 and libxslt development packages are installed.
+
+***libxml2-2.10.3_1 already installed (ports)***
+***libxslt-1.1.37 installed (ports)***
+
+-pyld installed; pip3.10 install pyld~=2.0.3
+-pillow~=9.3.0 - Error
+	The headers or library files could not be found for jpeg,
+      a required dependency when compiling Pillow from source.
+
+-py-pillow/py39-pillow (ports - v.9.2.0) -  
 
