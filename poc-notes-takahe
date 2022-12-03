@@ -198,7 +198,85 @@ Ports installed:
 	The headers or library files could not be found for jpeg,
       a required dependency when compiling Pillow from source.
 
--py-pillow/py39-pillow (ports - v.9.2.0)
+-py-pillow/py39-pillow (ports - v.9.2.0) - default options
 -urlman (old version in ports) - pip3.10 install urlman~=2.0.1
 -cryptography (old version in ports) - pip3.10 install cryptography~=38.0
--httpx (ports; version 0.23.0)
+-httpx (ports; version 0.23.0) - default options
+-uvicorn~=0.19 (slightly older version in ports - 0.18.3) - pip3.10 install uvicorn~=0.19
+-gunicorn (ports)- default options
+-psycopg2 (ports; version 2.9.4) - default options
+-bleach (ports) - default options
+-pydantic (ports)- default options
+-django-htmx~=1.13.0 (couldn't find in ports) - pip3.10 install django-htmx~=1.13.0
+-django-storages[google,boto3] (ports) - default options
+-whitenoise (ports) - default options
+-sphinx (couldn't find in ports) - pip3.10 install sphinx~=5.3.0
+-sentry-sdk (older version in ports) - pip3.10 install sentry-sdk~=1.11.0
+-dj_database_url (ports) - default options
+-python-dotenv (ports) - default options
+-email-validator (ports) - default options
+
+Tried to run with the commands:
+python3.10 manage.py runserver 192.168.254.108:8080
+	ModuleNotFoundError: No module named 'dj_database_url'
+python3.9 manage.py runserver 192.168.254.108:8080
+	ModuleNotFoundError: No module named 'sentry_sdk'
+
+-dj_database_url - pip3.10 install dj_database_url~=1.0.0
+
+Tried to run with the command:
+python3.10 manage.py runserver 192.168.254.108:8080
+        ModuleNotFoundError: No module named 'pydantic'
+
+-pydantic - pip3.10 install pydantic~=1.10.2
+
+Tried to run with the command:
+python3.10 manage.py runserver 192.168.254.108:8080
+        ImportError: email-validator is not installed, run `pip install pydantic[email]`
+
+-email-validator - pip3.10 install email-validator~=1.3.0
+
+Tried to run with the command:
+python3.10 manage.py runserver 192.168.254.108:8080
+	ImproperlyConfigured: Error loading psycopg2 module: No module named 'psycopg2'
+
+-psycopg2 - pip3.10 install psycopg2~=2.9.5
+
+Tried to run with the command:
+python3.10 manage.py runserver 192.168.254.108:8080
+	ModuleNotFoundError: No module named 'bleach'
+
+-bleach - pip3.10 install bleach~=5.0.1
+
+Tried to run with the command:
+python3.10 manage.py runserver 192.168.254.108:8080
+	ModuleNotFoundError: No module named 'httpx'
+
+-httpx - pip3.10 install httpx~=0.23
+
+Tried to run with the command:
+python3.10 manage.py runserver 192.168.254.108:8080
+	ModuleNotFoundError: No module named 'PIL'
+
+-pillow - pip3.10 install pillow~=9.3.0
+
+Tried to run with the command:
+python3.10 manage.py runserver 192.168.254.108:8080
+
+Error: connection to server at "192.168.254.108", port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+root@bsdlabs-takahe:~ # netstat -4
+Active Internet connections
+Proto Recv-Q Send-Q Local Address          Foreign Address        (state)    
+udp4       0      0 127.0.0.8.32193        127.0.0.8.32193 
+
+-Assigned password "takahe" to settings.py and Postgres DB
+
+Tried to run with the command:
+python3.10 manage.py runserver 192.168.254.108:8080
+
+Error: connection to server at "192.168.254.108", port 5432 failed: Connection >
+        Is the server running on that host and accepting TCP/IP connections?
+
+
