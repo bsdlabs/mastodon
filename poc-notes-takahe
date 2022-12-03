@@ -279,4 +279,13 @@ python3.10 manage.py runserver 192.168.254.108:8080
 Error: connection to server at "192.168.254.108", port 5432 failed: Connection >
         Is the server running on that host and accepting TCP/IP connections?
 
+$ pg_ctl -D /var/db/postgres/data14/ stop
+waiting for server to shut down.... done
+server stopped
+$ pg_ctl -D /var/db/postgres/data14/ start
+waiting for server to start....2022-12-03 08:17:16.185 UTC [25922] LOG:  ending log output to stderr
+2022-12-03 08:17:16.185 UTC [25922] HINT:  Future log output will go to log destination "syslog".
+ done
+server started
+
 
