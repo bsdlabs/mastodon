@@ -183,5 +183,5 @@ Ports installed:
 -instantiated python3.10 venv - "python3.10 -m venv ~/.virtualenvs/takahe"
 ***The following were executed in the python venv - To launch: ". ~/.virtualenv/takahe/bin/activate"
 -Django via pip.pyz - "python3.10 ~/pip.pyz install Django"
--Postgresql14-server/client - default options
+-Postgresql14-server - default options (port)
 
