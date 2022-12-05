@@ -448,6 +448,7 @@ Tried to run with the command:
 python3.10 manage.py runserver 192.168.254.108:8080
 	same errors as abovew
 
+Pg runs on localhost by default. Either switch it to all interfaces (dont do this in prod), or modify Django DATABASE url to use localhost
 Change Postgres listening address to "*"
 
 Performing system checks...
