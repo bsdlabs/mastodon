@@ -500,3 +500,6 @@ Traceback (most recent call last):
     from PIL import Image, ImageOps
 ModuleNotFoundError: No module named 'PIL'
 
+john@bsdlabs-takahe:~ $ python3.10 -m pip install pillow~=9.3.0
+/usr/local/bin/python3.10: No module named pip
+
