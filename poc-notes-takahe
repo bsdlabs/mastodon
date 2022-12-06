@@ -720,5 +720,41 @@ Quit the server with CONTROL-C.
 
 Created directory ~/static-collected
 
-Works, but "Internal Server Error" in browser
+"Internal Server Error" in browser
+
+Quit the server with CONTROL-C.
+[06/Dec/2022 07:16:40] "GET / HTTP/1.1" 500 2096
+[06/Dec/2022 07:16:40] "GET /static/fonts/raleway/raleway.css HTTP/1.1" 500 2096
+[06/Dec/2022 07:16:40] "GET /static/css/style.css HTTP/1.1" 500 2096
+[06/Dec/2022 07:16:40] "GET /static/fonts/font_awesome/all.min.css HTTP/1.1" 500 2096
+[06/Dec/2022 07:16:40] "GET /static/js/hyperscript.min.js HTTP/1.1" 500 2096
+[06/Dec/2022 07:16:40] "GET /static/js/htmx.min.js HTTP/1.1" 500 2096
+[06/Dec/2022 07:16:40] "GET /favicon.ico HTTP/1.1" 500 2096
+[06/Dec/2022 07:16:56] "GET /local/ HTTP/1.1" 500 2096
+[06/Dec/2022 07:16:56] "GET /static/css/style.css HTTP/1.1" 500 2096
+[06/Dec/2022 07:16:56] "GET /static/js/htmx.min.js HTTP/1.1" 500 2096
+[06/Dec/2022 07:16:56] "GET /static/js/hyperscript.min.js HTTP/1.1" 500 2096
+[06/Dec/2022 07:16:56] "GET /static/fonts/raleway/raleway.css HTTP/1.1" 500 2096
+[06/Dec/2022 07:16:56] "GET /static/fonts/font_awesome/all.min.css HTTP/1.1" 500 2096
+[06/Dec/2022 07:16:56] "GET /static/js/htmx.min.js HTTP/1.1" 500 2096
+[06/Dec/2022 07:16:58] "GET /local/ HTTP/1.1" 500 2096
+[06/Dec/2022 07:16:58] "GET /static/js/htmx.min.js HTTP/1.1" 500 2096
+[06/Dec/2022 07:16:58] "GET /static/css/style.css HTTP/1.1" 500 2096
+[06/Dec/2022 07:16:58] "GET /static/fonts/font_awesome/all.min.css HTTP/1.1" 500 2096
+[06/Dec/2022 07:16:58] "GET /static/fonts/raleway/raleway.css HTTP/1.1" 500 2096
+[06/Dec/2022 07:16:58] "GET /static/js/hyperscript.min.js HTTP/1.1" 500 2096
+[06/Dec/2022 07:16:58] "GET /static/js/htmx.min.js HTTP/1.1" 500 2096
+[06/Dec/2022 07:16:59] "GET /explore/ HTTP/1.1" 500 2096
+[06/Dec/2022 07:16:59] "GET /static/css/style.css HTTP/1.1" 500 2096
+[06/Dec/2022 07:16:59] "GET /static/js/hyperscript.min.js HTTP/1.1" 500 2096
+[06/Dec/2022 07:16:59] "GET /static/js/htmx.min.js HTTP/1.1" 500 2096
+[06/Dec/2022 07:16:59] "GET /static/fonts/raleway/raleway.css HTTP/1.1" 500 2096
+[06/Dec/2022 07:16:59] "GET /static/fonts/font_awesome/all.min.css HTTP/1.1" 500 2096
+[06/Dec/2022 07:17:05] "GET /auth/login/ HTTP/1.1" 500 2096
+[06/Dec/2022 07:17:06] "GET /static/css/style.css HTTP/1.1" 500 2096
+[06/Dec/2022 07:17:06] "GET /static/js/hyperscript.min.js HTTP/1.1" 500 2096
+[06/Dec/2022 07:17:06] "GET /static/fonts/font_awesome/all.min.css HTTP/1.1" 500 2096
+[06/Dec/2022 07:17:06] "GET /static/js/htmx.min.js HTTP/1.1" 500 2096
+[06/Dec/2022 07:17:06] "GET /static/fonts/raleway/raleway.css HTTP/1.1" 500 2096
+
 
