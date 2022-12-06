@@ -813,3 +813,4 @@ Found _identity.html
 After running "python3.10 manage.py migrate" the page loads.
 
 
+Most of the styles (css and fonts) aren't loading, working on that.
