@@ -757,4 +757,14 @@ Quit the server with CONTROL-C.
 [06/Dec/2022 07:17:06] "GET /static/js/htmx.min.js HTTP/1.1" 500 2096
 [06/Dec/2022 07:17:06] "GET /static/fonts/raleway/raleway.css HTTP/1.1" 500 2096
 
+-chmod -R 777 /home/john/static
+
+Quit the server with CONTROL-C.
+[06/Dec/2022 07:20:41] "GET / HTTP/1.1" 500 2096
+[06/Dec/2022 07:20:41] "GET /static/fonts/raleway/raleway.css HTTP/1.1" 500 2096
+[06/Dec/2022 07:20:41] "GET /static/css/style.css HTTP/1.1" 500 2096
+[06/Dec/2022 07:20:41] "GET /static/fonts/font_awesome/all.min.css HTTP/1.1" 500 2096
+[06/Dec/2022 07:20:41] "GET /static/js/hyperscript.min.js HTTP/1.1" 500 2096
+[06/Dec/2022 07:20:41] "GET /static/js/htmx.min.js HTTP/1.1" 500 2096
+
 
