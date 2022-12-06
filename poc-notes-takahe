@@ -814,3 +814,6 @@ After running "python3.10 manage.py migrate" the page loads.
 
 
 Most of the styles (css and fonts) aren't loading, working on that.
+
+Tried creating an account, but did not receive a confirmation e-mail with
+account information.
