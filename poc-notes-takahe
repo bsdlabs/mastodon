@@ -768,3 +768,42 @@ Quit the server with CONTROL-C.
 [06/Dec/2022 07:20:41] "GET /static/js/htmx.min.js HTTP/1.1" 500 2096
 
 
+def homepage(request):
+    if request.user.is_authenticated:
+        return Home.as_view()(request)
+    else:
+        return LoggedOutHomepage.as_view()(request)
+
+
+class LoggedOutHomepage(TemplateView):
+
+    template_name = "index.html"
+
+    def get_context_data(self):
+        return {
+            "identities": Identity.objects.filter(
+                local=True,
+                discoverable=True,
+            ).order_by("-created")[:20],
+        }
+
+The above is from /home/joohn/core/views.py which shows there should be an "index.html" template
+
+index.html relevant info is:
+{% extends "base.html" %}
+
+{% block title %}Welcome{% endblock %}
+
+
+{% block content %}
+    <div class="about">
+        <img class="banner" src="{{ config.site_banner }}">
+        {{ config.site_about|safe|linebreaks }}
+    </div>
+    <h2>People</h2>
+    {% for identity in identities %}
+       {% include "activities/_identity.html" %}
+    {% endfor %}
+{% endblock %}
+
+
