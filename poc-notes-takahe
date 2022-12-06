@@ -807,3 +807,4 @@ index.html relevant info is:
 {% endblock %}
 
 
+One issue I see is that there is no activities/_indentity.html
