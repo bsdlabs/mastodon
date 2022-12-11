@@ -832,3 +832,10 @@ Successfully created superuser
 
 
 Create User form needs an action defined....working on it
+
+Pointed Create button at email sample form which gave a 404 error for the action arg:
+<form action="/email/send.py" method="POST">
+
+root@bsdlabs-takahe:/home/john # cd email
+root@bsdlabs-takahe:/home/john/email # ls
+send.py	
