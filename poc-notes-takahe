@@ -817,3 +817,18 @@ Most of the styles (css and fonts) aren't loading, working on that.
 
 Tried creating an account, but did not receive a confirmation e-mail with
 account information.
+
+Need to create superuser
+python3.9 manage.py creatsuperuser --username=jauntyd --email=jauntyd@hotmail.com
+
+ModuleNotFoundError: No module named 'sentry_sdk'
+python3.10 -m pip install sentry_sdk
+
+Requirement already satisfied: sentry_sdk in ./.local/lib/python3.10/site-packages (1.11.1)
+Requirement already satisfied: certifi in ./.local/lib/python3.10/site-packages (from sentry_sdk) (2022.9.24)
+Requirement already satisfied: urllib3>=1.26.11 in ./.local/lib/python3.10/site-packages (from sentry_sdk) (1.26.13)
+
+Successfully created superuser
+
+
+Create User form needs an action defined....working on it
