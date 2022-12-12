@@ -839,3 +839,6 @@ Pointed Create button at email sample form which gave a 404 error for the action
 root@bsdlabs-takahe:/home/john # cd email
 root@bsdlabs-takahe:/home/john/email # ls
 send.py	
+
+Email sends to console via class based view, but only when app starts. Still working on it...
+
