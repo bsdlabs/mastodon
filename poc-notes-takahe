@@ -856,3 +856,7 @@ class NewAccount(TemplateView):
     template_name="templates/auth/signup.html"
 
 Looks better, but 500 error now
+
+As of right now: 500 error without "send_mail" function and 
+only "sends" message to console when the app starts with send_mail.
+Probably user error - working on it.
