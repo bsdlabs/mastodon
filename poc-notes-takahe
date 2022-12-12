@@ -842,3 +842,10 @@ send.py
 
 Email sends to console via class based view, but only when app starts. Still working on it...
 
+views:
+class NewAccount(View):
+    #template_name="templates/auth/signup.html"
+    send_mail('subject', 'another message', 'from@from.from', ['to@to.to'],)
+
+urls:
+path("signup/", core.NewAccount.as_view()),
