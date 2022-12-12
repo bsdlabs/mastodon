@@ -849,3 +849,10 @@ class NewAccount(View):
 
 urls:
 path("signup/", core.NewAccount.as_view()),
+
+
+view:
+class NewAccount(TemplateView):
+    template_name="templates/auth/signup.html"
+
+Looks better, but 500 error now
