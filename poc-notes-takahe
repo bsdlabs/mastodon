@@ -860,3 +860,393 @@ Looks better, but 500 error now
 As of right now: 500 error without "send_mail" function and 
 only "sends" message to console when the app starts with send_mail.
 Probably user error - working on it.
+
+
+***12/12/22 - Fresh install (only updated takahe code, no modification of python)***
+
+-Turned on DEBUG and adjusted DB username and password
+Traceback (most recent call last):
+  File "/home/john/.local/lib/python3.10/site-packages/django/core/management/base.py", line 402, in run_from_argv
+    self.execute(*args, **cmd_options)
+  File "/home/john/.local/lib/python3.10/site-packages/django/core/management/commands/runserver.py", line 74, in execute
+    super().execute(*args, **options)
+  File "/home/john/.local/lib/python3.10/site-packages/django/core/management/base.py", line 448, in execute
+    output = self.handle(*args, **options)
+  File "/home/john/.local/lib/python3.10/site-packages/django/core/management/commands/runserver.py", line 81, in handle
+    if not settings.DEBUG and not settings.ALLOWED_HOSTS:
+  File "/home/john/.local/lib/python3.10/site-packages/django/conf/__init__.py", line 92, in __getattr__
+    self._setup(name)
+  File "/home/john/.local/lib/python3.10/site-packages/django/conf/__init__.py", line 79, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/home/john/.local/lib/python3.10/site-packages/django/conf/__init__.py", line 190, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/usr/home/john/takahe/takahe/settings.py", line 9, in <module>
+    import django_cache_url
+ModuleNotFoundError: No module named 'django_cache_url'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/home/john/takahe/manage.py", line 38, in <module>
+    main()
+  File "/usr/home/john/takahe/manage.py", line 34, in main
+    execute_from_command_line(sys.argv)
+  File "/home/john/.local/lib/python3.10/site-packages/django/core/management/__init__.py", line 446, in execute_from_command_line
+    utility.execute()
+  File "/home/john/.local/lib/python3.10/site-packages/django/core/management/__init__.py", line 440, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "/home/john/.local/lib/python3.10/site-packages/django/core/management/base.py", line 415, in run_from_argv
+    connections.close_all()
+  File "/home/john/.local/lib/python3.10/site-packages/django/utils/connection.py", line 84, in close_all
+    for conn in self.all(initialized_only=True):
+  File "/home/john/.local/lib/python3.10/site-packages/django/utils/connection.py", line 76, in all
+    return [
+  File "/home/john/.local/lib/python3.10/site-packages/django/utils/connection.py", line 73, in __iter__
+    return iter(self.settings)
+  File "/home/john/.local/lib/python3.10/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/john/.local/lib/python3.10/site-packages/django/utils/connection.py", line 45, in settings
+    self._settings = self.configure_settings(self._settings)
+  File "/home/john/.local/lib/python3.10/site-packages/django/db/utils.py", line 148, in configure_settings
+    databases = super().configure_settings(databases)
+  File "/home/john/.local/lib/python3.10/site-packages/django/utils/connection.py", line 50, in configure_settings
+    settings = getattr(django_settings, self.settings_name)
+  File "/home/john/.local/lib/python3.10/site-packages/django/conf/__init__.py", line 92, in __getattr__
+    self._setup(name)
+  File "/home/john/.local/lib/python3.10/site-packages/django/conf/__init__.py", line 79, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/home/john/.local/lib/python3.10/site-packages/django/conf/__init__.py", line 190, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/usr/home/john/takahe/takahe/settings.py", line 9, in <module>
+    import django_cache_url
+ModuleNotFoundError: No module named 'django_cache_url'
+
+-python3.10 -m pip install django_cache_url
+
+-python3.10 manage.py runserver 192.168.254.108:8080
+Traceback (most recent call last):
+  File "/home/john/.local/lib/python3.10/site-packages/django/core/management/base.py", line 402, in run_from_argv
+    self.execute(*args, **cmd_options)
+  File "/home/john/.local/lib/python3.10/site-packages/django/core/management/commands/runserver.py", line 74, in execute
+    super().execute(*args, **options)
+  File "/home/john/.local/lib/python3.10/site-packages/django/core/management/base.py", line 448, in execute
+    output = self.handle(*args, **options)
+  File "/home/john/.local/lib/python3.10/site-packages/django/core/management/commands/runserver.py", line 81, in handle
+    if not settings.DEBUG and not settings.ALLOWED_HOSTS:
+  File "/home/john/.local/lib/python3.10/site-packages/django/conf/__init__.py", line 92, in __getattr__
+    self._setup(name)
+  File "/home/john/.local/lib/python3.10/site-packages/django/conf/__init__.py", line 79, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/home/john/.local/lib/python3.10/site-packages/django/conf/__init__.py", line 190, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/usr/home/john/takahe/takahe/settings.py", line 9, in <module>
+    import django_cache_url
+ModuleNotFoundError: No module named 'django_cache_url'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/home/john/takahe/manage.py", line 38, in <module>
+    main()
+  File "/usr/home/john/takahe/manage.py", line 34, in main
+    execute_from_command_line(sys.argv)
+  File "/home/john/.local/lib/python3.10/site-packages/django/core/management/__init__.py", line 446, in execute_from_command_line
+    utility.execute()
+  File "/home/john/.local/lib/python3.10/site-packages/django/core/management/__init__.py", line 440, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "/home/john/.local/lib/python3.10/site-packages/django/core/management/base.py", line 415, in run_from_argv
+    connections.close_all()
+  File "/home/john/.local/lib/python3.10/site-packages/django/utils/connection.py", line 84, in close_all
+    for conn in self.all(initialized_only=True):
+  File "/home/john/.local/lib/python3.10/site-packages/django/utils/connection.py", line 76, in all
+    return [
+  File "/home/john/.local/lib/python3.10/site-packages/django/utils/connection.py", line 73, in __iter__
+    return iter(self.settings)
+  File "/home/john/.local/lib/python3.10/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/john/.local/lib/python3.10/site-packages/django/utils/connection.py", line 45, in settings
+    self._settings = self.configure_settings(self._settings)
+  File "/home/john/.local/lib/python3.10/site-packages/django/db/utils.py", line 148, in configure_settings
+    databases = super().configure_settings(databases)
+  File "/home/john/.local/lib/python3.10/site-packages/django/utils/connection.py", line 50, in configure_settings
+    settings = getattr(django_settings, self.settings_name)
+  File "/home/john/.local/lib/python3.10/site-packages/django/conf/__init__.py", line 92, in __getattr__
+    self._setup(name)
+  File "/home/john/.local/lib/python3.10/site-packages/django/conf/__init__.py", line 79, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/home/john/.local/lib/python3.10/site-packages/django/conf/__init__.py", line 190, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/usr/home/john/takahe/takahe/settings.py", line 9, in <module>
+    import django_cache_url
+ModuleNotFoundError: No module named 'django_cache_url'
+john@bsdlabs-takahe:~/takahe $ pip
+pip      pip-3.9 
+john@bsdlabs-takahe:~/takahe $ python3.10 -m pip install django_cache_url
+Defaulting to user installation because normal site-packages is not writeable
+Collecting django_cache_url
+  Downloading django_cache_url-3.4.4-py2.py3-none-any.whl (4.7 kB)
+Installing collected packages: django_cache_url
+Successfully installed django_cache_url-3.4.4
+john@bsdlabs-takahe:~/takahe $ python3.10 manage.py runserver 192.168.254.108:8080
+Traceback (most recent call last):
+  File "/usr/home/john/takahe/manage.py", line 38, in <module>
+    main()
+  File "/usr/home/john/takahe/manage.py", line 34, in main
+    execute_from_command_line(sys.argv)
+  File "/home/john/.local/lib/python3.10/site-packages/django/core/management/__init__.py", line 446, in execute_from_command_line
+    utility.execute()
+  File "/home/john/.local/lib/python3.10/site-packages/django/core/management/__init__.py", line 386, in execute
+    settings.INSTALLED_APPS
+  File "/home/john/.local/lib/python3.10/site-packages/django/conf/__init__.py", line 92, in __getattr__
+    self._setup(name)
+  File "/home/john/.local/lib/python3.10/site-packages/django/conf/__init__.py", line 79, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/home/john/.local/lib/python3.10/site-packages/django/conf/__init__.py", line 190, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/usr/home/john/takahe/takahe/settings.py", line 157, in <module>
+    SETUP = Settings()
+  File "/home/john/.local/lib/python3.10/site-packages/pydantic/env_settings.py", line 39, in __init__
+    super().__init__(
+  File "/home/john/.local/lib/python3.10/site-packages/pydantic/main.py", line 342, in __init__
+    raise validation_error
+pydantic.error_wrappers.ValidationError: 1 validation error for Settings
+PGHOST
+  Either DATABASE_SERVER or PGHOST are required. (type=value_error)
+
+-Entered PGHOST ip
+-python3.10 manage.py runserver 192.168.254.108:8080
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/local/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/john/.local/lib/python3.10/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/home/john/.local/lib/python3.10/site-packages/django/core/management/commands/runserver.py", line 125, in inner_run
+    autoreload.raise_last_exception()
+  File "/home/john/.local/lib/python3.10/site-packages/django/utils/autoreload.py", line 87, in raise_last_exception
+    raise _exception[1]
+  File "/home/john/.local/lib/python3.10/site-packages/django/core/management/__init__.py", line 398, in execute
+    autoreload.check_errors(django.setup)()
+  File "/home/john/.local/lib/python3.10/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/home/john/.local/lib/python3.10/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/home/john/.local/lib/python3.10/site-packages/django/apps/registry.py", line 91, in populate
+    app_config = AppConfig.create(entry)
+  File "/home/john/.local/lib/python3.10/site-packages/django/apps/config.py", line 193, in create
+    import_module(entry)
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'corsheaders'
+
+-python3.10 -m pip install django-cors-headers
+-python3.10 manage.py runserver 192.168.254.108:8080
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/local/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/john/.local/lib/python3.10/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/home/john/.local/lib/python3.10/site-packages/django/core/management/commands/runserver.py", line 134, in inner_run
+    self.check(display_num_errors=True)
+  File "/home/john/.local/lib/python3.10/site-packages/django/core/management/base.py", line 475, in check
+    all_issues = checks.run_checks(
+  File "/home/john/.local/lib/python3.10/site-packages/django/core/checks/registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/home/john/.local/lib/python3.10/site-packages/django/core/checks/urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+  File "/home/john/.local/lib/python3.10/site-packages/django/core/checks/urls.py", line 24, in check_resolver
+    return check_method()
+  File "/home/john/.local/lib/python3.10/site-packages/django/urls/resolvers.py", line 494, in check
+    for pattern in self.url_patterns:
+  File "/home/john/.local/lib/python3.10/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/john/.local/lib/python3.10/site-packages/django/urls/resolvers.py", line 715, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/john/.local/lib/python3.10/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/john/.local/lib/python3.10/site-packages/django/urls/resolvers.py", line 708, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/usr/home/john/takahe/takahe/urls.py", line 6, in <module>
+    from activities.views import compose, explore, follows, posts, search, timelines
+  File "/usr/home/john/takahe/activities/views/compose.py", line 15, in <module>
+    from core.files import blurhash_image, resize_image
+  File "/usr/home/john/takahe/core/files.py", line 3, in <module>
+    import blurhash
+ModuleNotFoundError: No module named 'blurhash'
+
+-python3.10 -m pip install blurhash
+-python3.10 manage.py runserver 192.168.254.108:8080
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/local/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/john/.local/lib/python3.10/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/home/john/.local/lib/python3.10/site-packages/django/core/management/commands/runserver.py", line 134, in inner_run
+    self.check(display_num_errors=True)
+  File "/home/john/.local/lib/python3.10/site-packages/django/core/management/base.py", line 475, in check
+    all_issues = checks.run_checks(
+  File "/home/john/.local/lib/python3.10/site-packages/django/core/checks/registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/home/john/.local/lib/python3.10/site-packages/django/core/checks/urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+  File "/home/john/.local/lib/python3.10/site-packages/django/core/checks/urls.py", line 24, in check_resolver
+    return check_method()
+  File "/home/john/.local/lib/python3.10/site-packages/django/urls/resolvers.py", line 494, in check
+    for pattern in self.url_patterns:
+  File "/home/john/.local/lib/python3.10/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/john/.local/lib/python3.10/site-packages/django/urls/resolvers.py", line 715, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/john/.local/lib/python3.10/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/john/.local/lib/python3.10/site-packages/django/urls/resolvers.py", line 708, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/usr/home/john/takahe/takahe/urls.py", line 7, in <module>
+    from api.views import api_router, oauth
+  File "/usr/home/john/takahe/api/views/__init__.py", line 1, in <module>
+    from .accounts import *  # noqa
+  File "/usr/home/john/takahe/api/views/accounts.py", line 4, in <module>
+    from api import schemas
+  File "/usr/home/john/takahe/api/schemas.py", line 3, in <module>
+    from ninja import Field, Schema
+ModuleNotFoundError: No module named 'ninja'
+
+-python3.10 -m pip install ninja
+-python3.10 manage.py runserver 192.168.254.108:8080
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/local/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/john/.local/lib/python3.10/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/home/john/.local/lib/python3.10/site-packages/django/core/management/commands/runserver.py", line 134, in inner_run
+    self.check(display_num_errors=True)
+  File "/home/john/.local/lib/python3.10/site-packages/django/core/management/base.py", line 475, in check
+    all_issues = checks.run_checks(
+  File "/home/john/.local/lib/python3.10/site-packages/django/core/checks/registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/home/john/.local/lib/python3.10/site-packages/django/core/checks/urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+  File "/home/john/.local/lib/python3.10/site-packages/django/core/checks/urls.py", line 24, in check_resolver
+    return check_method()
+  File "/home/john/.local/lib/python3.10/site-packages/django/urls/resolvers.py", line 494, in check
+    for pattern in self.url_patterns:
+  File "/home/john/.local/lib/python3.10/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/john/.local/lib/python3.10/site-packages/django/urls/resolvers.py", line 715, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/john/.local/lib/python3.10/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/john/.local/lib/python3.10/site-packages/django/urls/resolvers.py", line 708, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/usr/home/john/takahe/takahe/urls.py", line 7, in <module>
+    from api.views import api_router, oauth
+  File "/usr/home/john/takahe/api/views/__init__.py", line 1, in <module>
+    from .accounts import *  # noqa
+  File "/usr/home/john/takahe/api/views/accounts.py", line 4, in <module>
+    from api import schemas
+  File "/usr/home/john/takahe/api/schemas.py", line 3, in <module>
+    from ninja import Field, Schema
+ImportError: cannot import name 'Field' from 'ninja' (/home/john/.local/lib/python3.10/site-packages/ninja/__init__.py)
+
+-django-admin migrate
+Traceback (most recent call last):
+  File "/home/john/.local/bin/django-admin", line 8, in <module>
+    sys.exit(execute_from_command_line())
+  File "/home/john/.local/lib/python3.10/site-packages/django/core/management/__init__.py", line 446, in execute_from_command_line
+    utility.execute()
+  File "/home/john/.local/lib/python3.10/site-packages/django/core/management/__init__.py", line 440, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "/home/john/.local/lib/python3.10/site-packages/django/core/management/base.py", line 402, in run_from_argv
+    self.execute(*args, **cmd_options)
+  File "/home/john/.local/lib/python3.10/site-packages/django/core/management/base.py", line 448, in execute
+    output = self.handle(*args, **options)
+  File "/home/john/.local/lib/python3.10/site-packages/django/core/management/base.py", line 93, in wrapped
+    saved_locale = translation.get_language()
+  File "/home/john/.local/lib/python3.10/site-packages/django/utils/translation/__init__.py", line 210, in get_language
+    return _trans.get_language()
+  File "/home/john/.local/lib/python3.10/site-packages/django/utils/translation/__init__.py", line 65, in __getattr__
+    if settings.USE_I18N:
+  File "/home/john/.local/lib/python3.10/site-packages/django/conf/__init__.py", line 92, in __getattr__
+    self._setup(name)
+  File "/home/john/.local/lib/python3.10/site-packages/django/conf/__init__.py", line 72, in _setup
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Requested setting USE_I18N, but settings are not configured. You must either define the environment variable DJANGO_SETTINGS_MODULE or call settings.configure() before accessing settings.
+
+-python3.10 manage.py runserver 192.168.254.108:8080
+-export DJANGO_SETTINGS_MODULE=takahe.settings
+
+Same two errors as previous....working on it
