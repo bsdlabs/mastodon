@@ -1250,3 +1250,5 @@ django.core.exceptions.ImproperlyConfigured: Requested setting USE_I18N, but set
 -export DJANGO_SETTINGS_MODULE=takahe.settings
 
 Same two errors as previous....working on it
+
+https://docs.djangoproject.com/en/4.1/topics/settings/#either-configure-or-django-settings-module-is-required
