@@ -1472,3 +1472,112 @@ django.middleware.locale.LocaleMiddleware
 To settings.py middleware section
 
 Same as previous errors
+
+-Added DJANGO_SETTINGS_MODULE = "/home/john/takahe/takahe/settings.py"
+
+~/.local/bin/django-admin migrate
+Traceback (most recent call last):
+  File "/home/john/.local/bin/django-admin", line 8, in <module>
+    sys.exit(execute_from_command_line())
+  File "/home/john/.local/lib/python3.10/site-packages/django/core/management/__init__.py", line 446, in execute_from_command_line
+    utility.execute()
+  File "/home/john/.local/lib/python3.10/site-packages/django/core/management/__init__.py", line 440, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "/home/john/.local/lib/python3.10/site-packages/django/core/management/base.py", line 402, in run_from_argv
+    self.execute(*args, **cmd_options)
+  File "/home/john/.local/lib/python3.10/site-packages/django/core/management/base.py", line 448, in execute
+    output = self.handle(*args, **options)
+  File "/home/john/.local/lib/python3.10/site-packages/django/core/management/base.py", line 93, in wrapped
+    saved_locale = translation.get_language()
+  File "/home/john/.local/lib/python3.10/site-packages/django/utils/translation/__init__.py", line 210, in get_language
+    return _trans.get_language()
+  File "/home/john/.local/lib/python3.10/site-packages/django/utils/translation/__init__.py", line 65, in __getattr__
+    if settings.USE_I18N:
+  File "/home/john/.local/lib/python3.10/site-packages/django/conf/__init__.py", line 92, in __getattr__
+    self._setup(name)
+  File "/home/john/.local/lib/python3.10/site-packages/django/conf/__init__.py", line 72, in _setup
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Requested setting USE_I18N, but settings are not configured. You must either define the environment variable DJANGO_SETTINGS_MODULE or call settings.configure() before accessing settings.
+
+
+-export DJANGO_SETTINGS_MODULE=/home/john/takahe/takahe/settings.py
+Traceback (most recent call last):
+  File "/home/john/.local/bin/django-admin", line 8, in <module>
+    sys.exit(execute_from_command_line())
+  File "/home/john/.local/lib/python3.10/site-packages/django/core/management/__init__.py", line 446, in execute_from_command_line
+    utility.execute()
+  File "/home/john/.local/lib/python3.10/site-packages/django/core/management/__init__.py", line 440, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "/home/john/.local/lib/python3.10/site-packages/django/core/management/base.py", line 415, in run_from_argv
+    connections.close_all()
+  File "/home/john/.local/lib/python3.10/site-packages/django/utils/connection.py", line 84, in close_all
+    for conn in self.all(initialized_only=True):
+  File "/home/john/.local/lib/python3.10/site-packages/django/utils/connection.py", line 76, in all
+    return [
+  File "/home/john/.local/lib/python3.10/site-packages/django/utils/connection.py", line 73, in __iter__
+    return iter(self.settings)
+  File "/home/john/.local/lib/python3.10/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/john/.local/lib/python3.10/site-packages/django/utils/connection.py", line 45, in settings
+    self._settings = self.configure_settings(self._settings)
+  File "/home/john/.local/lib/python3.10/site-packages/django/db/utils.py", line 148, in configure_settings
+    databases = super().configure_settings(databases)
+  File "/home/john/.local/lib/python3.10/site-packages/django/utils/connection.py", line 50, in configure_settings
+    settings = getattr(django_settings, self.settings_name)
+  File "/home/john/.local/lib/python3.10/site-packages/django/conf/__init__.py", line 92, in __getattr__
+    self._setup(name)
+  File "/home/john/.local/lib/python3.10/site-packages/django/conf/__init__.py", line 79, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/home/john/.local/lib/python3.10/site-packages/django/conf/__init__.py", line 190, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 992, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+ModuleNotFoundError: No module named '/home/john/takahe/takahe/settings'
+
+Traceback (most recent call last):
+  File "/home/john/.local/bin/django-admin", line 8, in <module>
+    sys.exit(execute_from_command_line())
+  File "/home/john/.local/lib/python3.10/site-packages/django/core/management/__init__.py", line 446, in execute_from_command_line
+    utility.execute()
+  File "/home/john/.local/lib/python3.10/site-packages/django/core/management/__init__.py", line 440, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "/home/john/.local/lib/python3.10/site-packages/django/core/management/base.py", line 415, in run_from_argv
+    connections.close_all()
+  File "/home/john/.local/lib/python3.10/site-packages/django/utils/connection.py", line 84, in close_all
+    for conn in self.all(initialized_only=True):
+  File "/home/john/.local/lib/python3.10/site-packages/django/utils/connection.py", line 76, in all
+    return [
+  File "/home/john/.local/lib/python3.10/site-packages/django/utils/connection.py", line 73, in __iter__
+    return iter(self.settings)
+  File "/home/john/.local/lib/python3.10/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/john/.local/lib/python3.10/site-packages/django/utils/connection.py", line 45, in settings
+    self._settings = self.configure_settings(self._settings)
+  File "/home/john/.local/lib/python3.10/site-packages/django/db/utils.py", line 148, in configure_settings
+    databases = super().configure_settings(databases)
+  File "/home/john/.local/lib/python3.10/site-packages/django/utils/connection.py", line 50, in configure_settings
+    settings = getattr(django_settings, self.settings_name)
+  File "/home/john/.local/lib/python3.10/site-packages/django/conf/__init__.py", line 92, in __getattr__
+    self._setup(name)
+  File "/home/john/.local/lib/python3.10/site-packages/django/conf/__init__.py", line 79, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/home/john/.local/lib/python3.10/site-packages/django/conf/__init__.py", line 190, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 992, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'takahe'
+
