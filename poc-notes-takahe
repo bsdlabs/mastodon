@@ -1467,3 +1467,8 @@ to takahe/settings.py
 
 Same as most recent error
 
+-Added:
+django.middleware.locale.LocaleMiddleware
+To settings.py middleware section
+
+Same as previous errors
