@@ -1252,3 +1252,58 @@ django.core.exceptions.ImproperlyConfigured: Requested setting USE_I18N, but set
 Same two errors as previous....working on it
 
 https://docs.djangoproject.com/en/4.1/topics/settings/#either-configure-or-django-settings-module-is-required
+
+-Added:
+DJANGO_SETTINGS_FILE = takahe.settings
+Traceback (most recent call last):
+  File "/usr/home/john/takahe/manage.py", line 38, in <module>
+    main()
+  File "/usr/home/john/takahe/manage.py", line 34, in main
+    execute_from_command_line(sys.argv)
+  File "/home/john/.local/lib/python3.10/site-packages/django/core/management/__init__.py", line 446, in execute_from_command_line
+    utility.execute()
+  File "/home/john/.local/lib/python3.10/site-packages/django/core/management/__init__.py", line 386, in execute
+    settings.INSTALLED_APPS
+  File "/home/john/.local/lib/python3.10/site-packages/django/conf/__init__.py", line 92, in __getattr__
+    self._setup(name)
+  File "/home/john/.local/lib/python3.10/site-packages/django/conf/__init__.py", line 79, in _setup
+    self._wrapped = Settings(settings_module)
+  File "/home/john/.local/lib/python3.10/site-packages/django/conf/__init__.py", line 190, in __init__
+    mod = importlib.import_module(self.SETTINGS_MODULE)
+  File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/usr/home/john/takahe/takahe/settings.py", line 19, in <module>
+    DJANGO_SETTINGS_FILE = takahe.settings
+NameError: name 'takahe' is not defined
+
+After pulling new code yesterday, tried migrating db:
+Traceback (most recent call last):
+  File "/home/john/.local/bin/django-admin", line 8, in <module>
+    sys.exit(execute_from_command_line())
+  File "/home/john/.local/lib/python3.10/site-packages/django/core/management/__init__.py", line 446, in execute_from_command_line
+    utility.execute()
+  File "/home/john/.local/lib/python3.10/site-packages/django/core/management/__init__.py", line 440, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "/home/john/.local/lib/python3.10/site-packages/django/core/management/base.py", line 402, in run_from_argv
+    self.execute(*args, **cmd_options)
+  File "/home/john/.local/lib/python3.10/site-packages/django/core/management/base.py", line 448, in execute
+    output = self.handle(*args, **options)
+  File "/home/john/.local/lib/python3.10/site-packages/django/core/management/base.py", line 93, in wrapped
+    saved_locale = translation.get_language()
+  File "/home/john/.local/lib/python3.10/site-packages/django/utils/translation/__init__.py", line 210, in get_language
+    return _trans.get_language()
+  File "/home/john/.local/lib/python3.10/site-packages/django/utils/translation/__init__.py", line 65, in __getattr__
+    if settings.USE_I18N:
+  File "/home/john/.local/lib/python3.10/site-packages/django/conf/__init__.py", line 92, in __getattr__
+    self._setup(name)
+  File "/home/john/.local/lib/python3.10/site-packages/django/conf/__init__.py", line 72, in _setup
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Requested setting USE_I18N, but settings are not configured. You must either define the environment variable DJANGO_SETTINGS_MODULE or call settings.configure() before accessing settings.
+
+
